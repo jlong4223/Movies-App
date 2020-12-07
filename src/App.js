@@ -1,23 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from '../src/components/header/Header'
+import {MovieCard} from './components/mainPage/movieCard/MovieCard'
+import {useState, useEffect} from 'react'
+
+import {fetchApiData} from './services/movie-api'
+
+
 
 function App() {
+
+  const [movieData, setMovieData] = useState({
+    dates: {},
+    page: 1,
+    results:[], 
+    total_pages: 72,
+    total_results: 1433
+  })
+
+  async function getAppData(){
+    const data = await fetchApiData()
+    setMovieData(data)
+  }
+
+  useEffect(()=>{
+    getAppData()
+    console.log('effect in use')
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Header />
       </header>
+      {movieData.results.map((result, idx)=>(
+        <MovieCard key={idx+1} result={result}/>
+      ))}
     </div>
   );
 }
