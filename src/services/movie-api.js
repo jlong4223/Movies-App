@@ -3,7 +3,8 @@ const BASE_URL='https://api.themoviedb.org/3/movie/now_playing'
 
 const API_KEY='?api_key=1b455a03201a0f93f1df8547d16af104'
 
-const REGION ='&language=en-US&page=1'
+//you can change the page number to see different movies
+const REGION ='&language=en-US&page=2'
 
 //make the function that makes the AJAX request and fetchs data
 export function fetchApiData(){
