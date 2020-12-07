@@ -3,3 +3,17 @@
     flex-wrap: wrap;
     justify-content: center; 
 } */
+
+.cardHeader{
+    font-size: 18px;
+    /* border-bottom: 1px dotted black; */
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    align-items: flex-end;
+}
