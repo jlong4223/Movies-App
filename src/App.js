@@ -1,6 +1,7 @@
 import './App.css';
 import Header from '../src/components/header/Header'
 import {MovieCard} from './components/mainPage/movieCard/MovieCard'
+
 import {useState, useEffect} from 'react'
 
 import {fetchApiData} from './services/movie-api'
