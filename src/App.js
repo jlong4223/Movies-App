@@ -33,9 +33,11 @@ function App() {
       <header className="App-header">
         <Header />
       </header>
+      <div className="movies">
       {movieData.results.map((result, idx)=>(
         <MovieCard key={idx+1} result={result}/>
       ))}
+      </div>
     </div>
   );
 }

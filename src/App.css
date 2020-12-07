@@ -35,3 +35,10 @@
     transform: rotate(360deg);
   }
 }
+
+
+.movies{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
